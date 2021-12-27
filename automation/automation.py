@@ -29,3 +29,10 @@ with open("automation/found_emails.txt", "w") as f:
     f.write(emails_joined)
 
 #Find and write phone numbers
+
+phone_pattern = r"\(?\d{3}\)?[.-]?(?:\d{3})?[.-]?\d{4}"
+
+phones = re.findall(phone_pattern, raw_text)
+
+for phone in phones:
+    print(phone)
